@@ -1,0 +1,205 @@
+::-webkit-scrollbar {
+    width : 15px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  ::-webkit-scrollbar-button{
+    background-color: white;
+  }
+  ::-webkit-scrollbar-corner {
+    background-color : white;
+  }
+  #Eventinfor
+  {
+    overflow-y: scroll;
+  }
+  .inner-menu{ /*inner-menu class에 대하여 */
+      display: none; /*display 속성을 none으로 지정*/
+      position : absolute; /*위치 속성을 absolute로 지정*/
+      width : 45px; /*너비는 상위 똑같이*/
+      top : 42px;
+      right : 10px;
+      background : rgb(43,189,210); /*배경색 지정*/
+      box-shadow : 0 2px 6px rgba(5, 5, 5, 0.9); /*box 그림자 속성 아래쪽만 2px 흐림도 6px 살짝 투명하게 그림자 설정*/
+      z-index: 1000; /*태그 스텍 순서 1000으로 지정*/
+      font-size: 15px;
+      font-weight: bold;
+      line-height:21px;
+      text-align: center;
+      list-style: none;
+      padding-left : 20px;
+      padding-right : 20px;
+    }
+    .inner-menu a{
+      text-decoration: none;
+      color : black;
+    }
+.inner-menu-item{
+  padding: 5px 0;
+}
+.inner-menu-item a:hover{
+  background : black;
+  color : white;
+}
+.nav_menu_li{
+  display: inline;
+  position : relative;
+  height: 21px;
+  width: 75px;
+  list-style: none;
+  float: right;
+  padding: 10px;
+  background-color: rgb(43,189,210);/*rgb(46,209,169);*/
+  border-style: none;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  line-height:21px;
+  margin: 1px;
+}
+#Sel{
+  border-radius: 0 10px 10px 0;
+}
+#English:hover{
+  background: url(images/United_States.jpg);
+  background-size: cover;
+}
+#English:hover a {
+  color: rgba(0,0,0,0);
+}
+#Korea:hover {
+  background:  url(images/Korea.jpg);
+  background-size: cover;
+}
+#Korea:hover a {
+  color: rgba(0,0,0,0);
+}
+#Home{
+
+  border-radius: 10px 0 0 10px;
+}
+#Home:hover{
+  background: url(images/Home.jpg);
+  background-size: cover;
+}
+#Home:hover a {
+  color: rgba(0,0,0,0);
+}
+
+.nav_menu_a{
+  text-decoration: none;
+  color: black;
+}
+#header_menu_nav {
+  position: fixed;
+  right: 10px;
+}
+#Home_text:hover{
+  display:block;
+  transform: scale(1.2,1.2);/*84*/
+  background:  url(images/Korea.jpg) no-repeat;
+}
+.nav_season_li{
+  background-color: rgb(28,225,126);
+  width: 110px;
+  height: 70px;
+  margin: 5px;
+  list-style: none;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 50px;
+}
+.nav_season_li a{
+  color: rgb(196,57,82);
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+}
+#Season_bar {
+  position: fixed;
+  right : 30px;
+  margin-top : 150px;
+  z-index : 100;
+}
+#Spring:hover{
+  background: url(images/봄_1.jpg);
+  background-size: cover;
+}
+#Spring:hover a{
+  color: rgba(0,0,0,0);
+}
+#Summer:hover{
+  background: url(images/여름_1.jpg);
+  background-size: cover;
+}
+#Summer:hover a{
+  color: rgba(0,0,0,0);
+}
+#Fall:hover{
+  background: url(images/가을_1.jpg);
+  background-size: cover;
+}
+#Fall:hover a{
+  color: rgba(0,0,0,0);
+}
+#Winter:hover{
+  background: url(images/겨울_1.jpg);
+  background-size: cover;
+}
+#Winter:hover a{
+  color: rgba(0,0,0,0);
+}
+#Logo{
+  margin-left : auto;
+  margin-right: auto;
+  display : block;
+  margin-bottom: 10px;
+}
+#Exitinfor
+{
+  cursor : pointer;
+  position : fixed;
+}
+#Right
+{
+  cursor:pointer;
+  position : relative;
+  float : right;
+  top : 280px;
+}
+#Intro{
+  margin-bottom: 15px;
+}
+#Left
+{
+  cursor:pointer;
+  position : relative;
+  float : left;
+  top : 280px;
+}
+#Map
+{
+  width : 600px;
+  height : 500px;
+  margin : 50px auto;
+}
+#Month_nav{
+  display:none;
+}
+#API
+{
+  width: 800px; height: 600px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    z-index: 100;
+    margin-left: -400px;
+    display:none;
+}

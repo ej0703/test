@@ -1,0 +1,827 @@
+﻿<!doctype html>
+<html>
+<head>
+  <title>강원도 축제</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $('.nav_menu_li').hover(function () {
+  $(this).find('.inner-menu').show();
+  }, function () {
+  $(this).find('.inner-menu').hide();
+  });
+  });
+  </script>
+  <style>
+  #Eventinfor
+  {
+    width: 820px; height: 600px;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      z-index: 100;
+      margin-left: -400px;
+      display:none;
+  }
+  #Exitinfor
+   {
+      width: 800px; height: 30px;
+    }
+  #Infor
+  {
+    width: 800px;
+    height: 340px;
+  }
+  #Ipicture
+  {
+    float : left;
+    margin : 30px;
+    margin-top : 10px;
+  }
+  #Exitinfor a img
+  {
+    float : right;
+  }
+  #Image
+  {
+    width:250px;
+    height:300px;
+  }
+  #Eventintro
+  {
+    width : 740px;
+    height: 200px;
+  }
+  .Ititle
+  {
+    margin-top : 20px;
+    font-size : 27px;
+    height: 40px;
+    margin-bottom: -10px;
+  }
+  .Icontent
+  {
+    margin-top : 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .Introduce
+  {
+    margin-top : 30px;
+    height : 30px;
+    font-size : 20px;
+    margin-left : 15px;
+  }
+  #Title
+  {
+
+  }
+  #Term
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Address
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Place
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Phonenumber
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Homepage
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Intro
+  {
+    display : block;
+    margin-top : 3px;
+    color : white;
+    font-size : 13px;
+    margin-left : 15px;
+  }
+  .Eventinfor:hover
+  {
+    cursor: pointer;
+  }
+  content
+  {
+    width : 1200px;
+  }
+  #Event_Spring
+  {
+    display:none;
+    width: 1000px;
+    height: 350px;
+    left: 50%;
+    margin-left: -250px;
+    position: relative;
+  }
+  #Event_Summer
+  {
+    display:none;
+    width: 1000px;
+    height: 350px;
+    left: 50%;
+    margin-left: -250px;
+    position: relative;
+  }
+  #Event_Fall
+  {
+    display:none;
+    width: 1000px;
+    height: 350px;
+    left: 50%;
+    margin-left: -250px;
+    position: relative;
+  }
+  #Event_Winter
+  {
+    display:none;
+    width: 1000px;
+    height: 350px;
+    left: 50%;
+    margin-left: -250px;
+    position: relative;
+  }
+  .Each_Event
+  {
+    overflow: hidden;
+    display:inline-block;
+    width: 50%;
+    height: 100%;
+    position:relative;
+    transition: .4s;
+  }
+  .Each_Event img
+  {
+    width: 100%;
+    transition: .4s;
+  }
+  .Event_Information
+  {
+    padding: 8px;
+    opacity: 0;
+    transition: .4s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid white;
+    top : 50%;
+  }
+  .Event_Information:hover
+  {
+    color:white;
+    background-color: black;
+  }
+  .Each_Event:hover
+  {
+    background-color:rgba(255,255,255,0.3);
+  }
+  .Each_Event:hover div
+  {
+    opacity:1;
+    z-index:1;
+  }
+  .Each_Event:hover img
+  {
+    opacity:0.1;
+    z-index:10;
+  }
+  </style>
+  <script>
+  window.onload function()
+  {
+    var season = localStorage.getItem('Season');
+    if(season == "Spring")
+    {
+      Season_Selector(1);
+    }
+    else if(season == "Summer")
+    {
+      Season_Selector(2);
+    }
+    else if(season == "Fall");
+    {
+      Season_Selector(3);
+    }
+    else if(season == "Winter")
+    {
+      Season_Selector(4);
+    }
+  }
+  </script>
+  <script>
+  var Spring_arr=["images/Kangwondo images/두타산/두타산 (1).jpg", "images/Kangwondo images/두타산/두타산 (2).jpg", "images/Kangwondo images/두타산/두타산 (3).jpg",
+"images/Kangwondo images/두타산/두타산 (4).jpg", "images/Kangwondo images/두타산/두타산 (5).jpg"];
+var Spring_arr2=["images/Kangwondo images/남이섬/남이섬 (1).jpg", "images/Kangwondo images/남이섬/남이섬 (2).jpg", "images/Kangwondo images/남이섬/남이섬 (3).jpg",
+"images/Kangwondo images/남이섬/남이섬 (4).jpg", "images/Kangwondo images/남이섬/남이섬 (5).jpg", "images/Kangwondo images/남이섬/남이섬 (6).jpg"];
+  var Spring_i = 0;
+  var Spring_j = 0;
+
+  var Summer_arr=["images/Kangwondo images/찰옥수수/찰옥수수 (1).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (2).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (3).jpg",
+"images/Kangwondo images/찰옥수수/찰옥수수 (4).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (5).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (6).jpg",
+"images/Kangwondo images/찰옥수수/찰옥수수 (7).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (8).jpg", "images/Kangwondo images/찰옥수수/찰옥수수 (9).jpg"];
+var Summer_arr2=["images/Kangwondo images/대관령/대관령 (1).jpg", "images/Kangwondo images/대관령/대관령 (2).jpg", "images/Kangwondo images/대관령/대관령 (3).jpg",
+"images/Kangwondo images/대관령/대관령 (4).jpg", "images/Kangwondo images/대관령/대관령 (5).jpg"];
+  var Summer_i = 0;
+  var Summer_j = 0;
+
+  var Fall_arr=["images/Kangwondo images/속초/속초 (1).jpg", "images/Kangwondo images/속초/속초 (2).jpg", "images/Kangwondo images/속초/속초 (3).jpg",
+  "images/Kangwondo images/속초/속초 (4).jpg", "images/Kangwondo images/속초/속초 (5).jpg"];
+  var Fall_arr2=["images/Kangwondo images/횡성/횡성 (1).jpg", "images/Kangwondo images/횡성/횡성 (2).jpg", "images/Kangwondo images/횡성/횡성 (3).jpg",
+"images/Kangwondo images/횡성/횡성 (4).jpg", "images/Kangwondo images/횡성/횡성 (5).jpg", "images/Kangwondo images/횡성/횡성 (6).jpg",
+"images/Kangwondo images/횡성/횡성 (7).jpg", "images/Kangwondo images/횡성/횡성 (8).jpg", "images/Kangwondo images/횡성/횡성 (9).jpg",
+"images/Kangwondo images/횡성/횡성 (10).jpg", "images/Kangwondo images/횡성/횡성 (11).jpg", "images/Kangwondo images/횡성/횡성 (12).jpg",
+"images/Kangwondo images/횡성/횡성 (13).jpg", "images/Kangwondo images/횡성/횡성 (14).jpg", "images/Kangwondo images/횡성/횡성 (15).jpg"];
+  var Fall_i = 0;
+  var Fall_j = 0;
+
+  var Winter_arr=["images/Kangwondo images/삼척/삼척 (1).png", "images/Kangwondo images/삼척/삼척 (2).png", "images/Kangwondo images/삼척/삼척 (3).png",
+  "images/Kangwondo images/삼척/삼척 (4).png", "images/Kangwondo images/삼척/삼척 (5).png", "images/Kangwondo images/삼척/삼척 (6).png"];
+  var Winter_arr2=["images/Kangwondo images/라이트/라이트 (1).jpg", "images/Kangwondo images/라이트/라이트 (2).jpg", "images/Kangwondo images/라이트/라이트 (3).jpg",
+"images/Kangwondo images/라이트/라이트 (4).jpg", "images/Kangwondo images/라이트/라이트 (5).jpg"];
+  var Winter_i = 0;
+  var Winter_j = 0;
+
+  var Spring_interval, Spring_interval2;
+  var Summer_interval, Summer_interval2;
+  var Fall_interval, Fall_interval2;
+  var Winter_interval, Winter_interval2;
+
+  function start_Spring_interval(){
+    var Spring_image = document.getElementById('Event_Spring_image_1');
+    var Spring_image2 = document.getElementById('Event_Spring_image_2');
+    Spring_interval = setInterval(function(){
+      Spring_image.src = Spring_arr[Spring_i%5];
+      Spring_i = Spring_i + 1;
+    }, 1000);//1000= 1sec
+    Spring_interval2 = setInterval(function(){
+      Spring_image2.src = Spring_arr2[Spring_j%5];
+      Spring_j = Spring_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Spring_interval(){
+    clearInterval(Spring_interval);
+    clearInterval(Spring_interval2);
+  }
+  function start_Summer_interval(){
+    var Summer_image = document.getElementById('Event_Summer_image_1');
+    var Summer_image2 = document.getElementById('Event_Summer_image_2');
+    Summer_interval = setInterval(function(){
+      Summer_image.src = Summer_arr[Summer_i%6];
+      Summer_i = Summer_i + 1;
+    }, 1000);//1000= 1sec
+    Summer_interval2 = setInterval(function(){
+      Summer_image2.src = Summer_arr2[Summer_j%5];
+      Summer_j = Summer_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Summer_interval(){
+    clearInterval(Summer_interval);
+    clearInterval(Summer_interval2);
+  }
+  function start_Fall_interval(){
+    var Fall_image = document.getElementById('Event_Fall_image_1');
+    var Fall_image2 = document.getElementById('Event_Fall_image_2');
+    Fall_interval = setInterval(function(){
+      Fall_image.src = Fall_arr[Fall_i%5];
+      Fall_i = Fall_i + 1;
+    }, 1000);//1000= 1sec
+    Fall_interval2 = setInterval(function(){
+      Fall_image2.src = Fall_arr2[Fall_j%15];
+      Fall_j = Fall_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Fall_interval(){
+    clearInterval(Fall_interval);
+    clearInterval(Fall_interval2);
+  }
+  function start_Winter_interval(){
+    var Winter_image = document.getElementById('Event_Winter_image_1');
+    var Winter_image2 = document.getElementById('Event_Winter_image_2');
+    Winter_interval = setInterval(function(){
+      Winter_image.src = Winter_arr[Winter_i%6];
+      Winter_i = Winter_i + 1;
+    }, 1000);//1000= 1sec
+    Winter_interval2 = setInterval(function(){
+      Winter_image2.src = Winter_arr2[Winter_j%5];
+      Winter_j = Winter_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Winter_interval(){
+    clearInterval(Winter_interval);
+    clearInterval(Winter_interval2);
+  }
+  </script>
+</head>
+<body>
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="Sel" class="nav_menu_li">
+                <span id="Sel1">지역 선택</span>
+                <ul class="inner-menu">
+                  <li class="inner-menu-item"><a href="Kyungkido.html">경기도</a></li>
+                  <li class="inner-menu-item"><a href="Choongchungdo.html">충청도</a></li>
+                  <li class="inner-menu-item"><a href="Kyungsangdo.html">경상도</a></li>
+                  <li class="inner-menu-item"><a href="Jullado.html">전라도</a></li>
+                  <li class="inner-menu-item"><a href="Jejudo.html">제주도</a></li>
+                </ul>
+              </li>
+              <li id="English" class="nav_menu_li"><a href="#" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <aside>
+      <div>
+        <nav id="Season_bar">
+            <ul>
+              <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)"><a href="#" id="Spring_nav_a" class="nav_season_a" onclick="Season_Selector(1)">봄</a></li>
+              <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)"><a href="#" id="Summer_nav_a" class="nav_season_a" onclick="Season_Selector(2)">여름</a></li>
+              <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"><a href="#" id="Fall_nav_a" class="nav_season_a" onclick="Season_Selector(3)">가을</a></li>
+              <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)"><a href="#" id="Winter_nav_a" class="nav_season_a" onclick="Season_Selector(4)">겨울</a></li>
+              <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <article>
+        <section>
+          <div id="Eventinfor">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+
+            <div id="Right">
+              <img src="./images/right.png" width=30 height=30 onClick="Next(1)"/>
+            </div>
+
+            <div id="Infor">
+              <div id="Ipicture"><img id="Image"></div>
+              <div class="Ititle"><p id="Title"></p></div>
+              <div class="Icontent">행사기간<p id="Term"></p></div>
+              <div class="Icontent">위치<p id="Address"></p></div>
+              <div class="Icontent">행사장소<p id="Place"></p></div>
+              <div class="Icontent">연락처<p id="Phonenumber"></p></div>
+              <div class="Icontent">홈페이지<p id="Homepage"></p></div>
+            </div>
+            <div id="Eventintro">
+              <div class="Introduce">행사소개<p id="Intro"></p></div>
+            </div>
+          </div>
+
+          <div id="API">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Left">
+              <img src="./images/left.png" width=30 height=30 onClick="Next(2)"/>
+            </div>
+            <div id="Map"></div>
+          </div>
+
+        </section>
+        <content>
+          <div id="Event_Spring">
+            <div class="Each_Event">
+              <div class="Event_Information" onclick="Infornum(1)"><a>행사 정보</a></div>
+              <img src="./images/Kangwondo images/두타산/두타산 (5).jpg" id="Event_Spring_image_1" width=300 height=400/>
+              </div>
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(2)"><a>행사 정보</a></div>
+                <img src="./images/Kangwondo images/남이섬/남이섬 (6).jpg" id="Event_Spring_image_2" width=300 height=400/>
+                </div>
+            </div>
+            <div id="Event_Summer">
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(3)"><a>행사 정보</a></div>
+                <img src="./images/Kangwondo images/찰옥수수/찰옥수수 (9).jpg" id="Event_Summer_image_1" width=300 height=400/>
+                </div>
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(4)"><a>행사 정보</a></div>
+                  <img src="./images/Kangwondo images/대관령/대관령 (5).jpg" id="Event_Summer_image_2" width=300 height=400/>
+                  </div>
+              </div>
+              <div id="Event_Fall">
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(5)"><a>행사 정보</a></div>
+                  <img src="./images/Kangwondo images/속초/속초 (5).jpg" id="Event_Fall_image_1" width=300 height=400/>
+                  </div>
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(6)"><a>행사 정보</a></div>
+                    <img src="./images/Kangwondo images/횡성/횡성 (15).jpg" id="Event_Fall_image_2" width=300 height=400/>
+                    </div>
+                </div>
+                <div id="Event_Winter" >
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(7)"><a>행사 정보</a></div>
+                    <img src="./images/Kangwondo images/삼척/삼척 (6).png" id="Event_Winter_image_1" width=300 height=400/>
+                    </div>
+                    <div class="Each_Event">
+                      <div class="Event_Information" onclick="Infornum(8)"><a>행사 정보</a></div>
+                      <img src="./images/Kangwondo images/라이트/라이트 (5).jpg" id="Event_Winter_image_2" width=300 height=400/>
+                      </div>
+                  </div>
+        </content>
+      </article>
+  </div>
+  <script>
+  </script>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+      // Retrieve
+      var a;
+      var Season_bar_num;
+      a = sessionStorage.getItem("season_num");
+      Season_bar_num = a;
+      Season_Selector(a);
+      Season_bar_fix(Season_bar_num);
+  }
+
+  function Season_bar_fix(Season_bar_num){
+    if(Season_bar_num==1){//
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+      document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Spring_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==2){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+      document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Summer_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==3){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+      document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Fall_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==4){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+      document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Winter_nav_a").innerHTML = "";
+    }
+  }
+
+  function Spring_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "3~5월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Summer_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "6~8월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Fall_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "9~11월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Winter_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "11~2월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Month_hide(obj){
+    document.getElementById("Month_nav").style.display = "none";//
+  }
+
+  function Inforhide()
+  {
+    document.getElementById('Eventinfor').style.display = "none";
+    document.getElementById('API').style.display = "none";
+  }
+  function Next(num)
+{
+  if(num == 1)
+  {
+    document.getElementById('API').style.display = "block";
+    document.getElementById('Eventinfor').style.display = "none";
+  }
+  if(num == 2)
+  {
+    document.getElementById('Eventinfor').style.display = "block";
+    document.getElementById('API').style.display = "none";
+  }
+}
+
+  function Infornum(num)
+  {
+    if(num == 1)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/duta.jpg";
+      document.getElementById('Title').textContent = "두타산 산나물축제";
+      document.getElementById('Term').textContent = "2018.05.18 ~ 2018.05.20";
+      document.getElementById('Address').textContent = "강원도 삼척시 하장면 번천리";
+      document.getElementById('Place').textContent = "삼척시 하장면 번천리 산촌체험장(구 번천분교)";
+      document.getElementById('Phonenumber').textContent = "033-570-4842";
+      document.getElementById('Homepage').textContent = "http://www.samcheok.go.kr";
+      document.getElementById('Intro').innerHTML = "백두대간을 중심으로 형성된 강원도내 산나물 서식지 및 야생 재배지는 2,000여ha로 연간 전국 생산량의 23%인 1만1,000톤의 산나물이 생산되고 생산액은 1240억 원으로 전국 생산액의 37%를 차지하고 있다. 산나물의 고장 강원도에서도 삼척시는 5월 18일에서 20일까지 두타산 산나물 축제를 개최한다.";
+
+      var doota = {lat: 37.392744, lng: 128.992906};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: doota
+        });
+        var marker = new google.maps.Marker({
+          position: doota,
+          map: map
+        });
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/nam.jpg";
+      document.getElementById('Title').textContent = "남이섬 어쿠스틱 청춘 페스티벌";
+      document.getElementById('Term').textContent = "2018.05.12 ~ 2018.06.03";
+      document.getElementById('Address').textContent = "강원도 춘천시 남산면 남이섬길 1";
+      document.getElementById('Place').textContent = "남이섬 일대";
+      document.getElementById('Phonenumber').textContent = "031-580-8015";
+      document.getElementById('Homepage').textContent = "https://namisum.com";
+      document.getElementById('Intro').innerHTML = "봄기운 만발한 5월의 남이섬에서 ‘2018 남이섬 어쿠스틱 청춘 페스티벌’이 열린다.<br/>오는 5월 12일부터 6월 3일까지 매 주말 펼쳐질 이번 축제는, ‘청불: 청춘에 불을 지피다’라는 슬로건을 걸고 열정과 꿈을 노래한다.<br/>축제를 장식할 뮤지션은 초청된 8팀(연남동 덤앤더머, 분리수거 밴드 등), 사전 공모를 통해 선정된 16팀(MOON BAND(조문근밴드), 마인드 애틱, 보이스밴드 엑시트 등) 총 24팀이며, 남이섬 내 중앙잣나무길과 메타세쿼이아길이 만나는 ‘자유무대’를 중심으로, 유동인구가 많은 관광안내소 앞, 유니세프홀 앞 거리에서도 흥겨운 버스킹으로 관객을 만난다.<br/>초청팀은 2회씩, 공모에 선정된 팀은 팀당 총 3회의 공연이 이어질 예정이며 이밖에도 ‘청불 백일장’, ‘청춘 운동회’, ‘라면 먹고 갈래?’ 등 관객이 함께할 수 있는 다양한 이벤트도 준비된다. 축제는 남이섬 입장 시 무료로 자유롭게 즐길 수 있다.(단, 일부 이벤트 유료 참가)";
+
+      var nami = {lat: 37.790164, lng: 127.525850};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: nami
+        });
+        var marker = new google.maps.Marker({
+          position: nami,
+          map: map
+        });
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/susu.jpg";
+      document.getElementById('Title').textContent = "홍천 찰옥수수축제";
+      document.getElementById('Term').textContent = "2018.07.27 ~ 2018.07.29";
+      document.getElementById('Address').textContent = "강원도 홍천군 홍천읍 산림공원1길 29(홍천읍)";
+      document.getElementById('Place').textContent = "홍천읍 도시산림공원 토리숲";
+      document.getElementById('Phonenumber').textContent = "033-439-5800";
+      document.getElementById('Homepage').textContent = "http://www.hccf.or.kr";
+      document.getElementById('Intro').innerHTML = "홍천찰옥수수축제는 매년 7월말 ~ 8월초에 열리는 축제로 전국의 각지에서 많은 사람들이 축제와 더불어 홍천의 자랑인 모래톱이 살아있는 맑은 강변을 함께 하고자 가족과 함께, 연인과 함께 홍천으로 찾아 들고 있다. 홍천찰옥수수축제는 여름철 휴가의 휴식처와 휴양지인 홍천을 대변함은 물론, 관광객과 지역주민이 함께하는 관광체험축제임이 분명하다. 더불어 옹기같은 시골의 투박함과 진흙 내음이 물씬 풍기는 향수의 맛을 전하는 축제이다.";
+
+      var hongcheon = {lat: 37.690342, lng: 127.893943};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: hongcheon
+        });
+        var marker = new google.maps.Marker({
+          position: hongcheon,
+          map: map
+        });
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/jae.jpg";
+      document.getElementById('Title').textContent = "평창 대관령 음악제";
+      document.getElementById('Term').textContent = "2018.07.23 ~ 2018.08.05";
+      document.getElementById('Address').textContent = "강원도 평창군 대관령면 솔봉로 325";
+      document.getElementById('Place').textContent = "강원도 평창 알펜시아 및 강원도 일원";
+      document.getElementById('Phonenumber').textContent = "033-240-1360";
+      document.getElementById('Homepage').textContent = "http://www.mpyc.kr";
+      document.getElementById('Intro').innerHTML = "매해 여름, 세계 최고의 연주자들이 펼치는 최고의 연주를 평창 대관령 숲 속에서 즐길 수 있는 국내 최고의 클래식 음악축제이다. 올해 15주년을 맞이하는 평창대관령음악제는 제3대 예술감독으로 강원도 원주 출신 세계적 피아니스트 손열음을 위촉하여 더 새롭고 다채로운 프로그램을 선보일 예정이다. 올해 음악제의 주제는 '멈추어, 묻다'이다. 모든 것이 단숨에 소비되고 마는 이 시대에 잠시 멈추어 서서 숨을 고르며, 시공간의 한계를 뛰어넘어 불멸의 가치를 지니는 클래식 음악을 통해 대담한 질문을 던져보고자 한다.";
+
+      var pyungchang = {lat: 37.661695, lng: 128.676314};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: pyungchang
+        });
+        var marker = new google.maps.Marker({
+          position: pyungchang,
+          map: map
+        });
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/sok.jpg";
+      document.getElementById('Title').textContent = "속초 음악불꽃 크루즈";
+      document.getElementById('Term').textContent = "2018.05.03 ~ 2018.12.30";
+      document.getElementById('Address').textContent = "강원도 속초시 중앙로 214-1";
+      document.getElementById('Place').textContent = "하모니크루즈 선착장";
+      document.getElementById('Phonenumber').textContent = "1522-8905";
+      document.getElementById('Homepage').textContent = "http://cruisestory.co.kr";
+      document.getElementById('Intro').innerHTML = "별빛속 바다를 달리는 낭만 속초여행!<br/>푸르고 시원한 동해바다를 배경으로 낭만과 감동이 있는 음악불꽃쇼를 사랑하는 사람과 속초 밤바다에서 즐겨보자.<br/>국내 최대 선상불꽃축제 심장을 울리는 음악, 손에 잡힐듯한 불꽃,<br/>멀리서 보던 불꽃축제가 아닌 새로운 클래스의 불꽃축제로 야경과 선상이라는 장소가 자아내는 로맨틱한 분위기에 어울리는 국내 최대 선상 음악불꽃축제이다.";
+
+      var sokcho = {lat: 38.208419, lng: 128.593811};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: sokcho
+        });
+        var marker = new google.maps.Marker({
+          position: sokcho,
+          map: map
+        });
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/sung.jpg";
+      document.getElementById('Title').textContent = "횡성 한우축제";
+      document.getElementById('Term').textContent = "2018.10.05 ~ 2018.10.09";
+      document.getElementById('Address').textContent = "강원도 횡성군 횡성읍 문화체육로 47";
+      document.getElementById('Place').textContent = "강원도 횡성군 횡성읍 섬강둔치 일원";
+      document.getElementById('Phonenumber').textContent = "1522-1099";
+      document.getElementById('Homepage').textContent = "http://www.hscf.or.kr/festival";
+      document.getElementById('Intro').innerHTML = "횡성한우축제는 전국 최고의 명성과 세계가 인정한 횡성한우의 우수성을 널리 알리고 횡성의 수려한 자연환경과 어우러진 다채로운 이벤트 및 체험을 즐길 수 있는 전국에서 가장 큰 규모의 축제이다. 횡성군의 최대규모 축제행사인 “횡성한우축제”는 국태민안과 풍년을 기원하며 백성의 편안을 도모하기 위해 매년 개최되어 오던 “횡성태풍문화제”의 명칭을 변경하여 2004년부터 새로운 목표와 주제를 가지고 개최하게 되었다.";
+
+      var hanwoo = {lat: 37.497631, lng: 127.987850};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: hanwoo
+        });
+        var marker = new google.maps.Marker({
+          position: hanwoo,
+          map: map
+        });
+    }
+    else if(num == 7)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/sam.png";
+      document.getElementById('Title').textContent = "삼척 해맞이축제";
+      document.getElementById('Term').textContent = "2018.01.01 ~ 2018.01.01";
+      document.getElementById('Address').textContent = "강원도 삼척시 원덕읍 임원항구로 30-11(원덕읍)";
+      document.getElementById('Place').textContent = "소망의 탑, 삼척해수욕장, 한치재, 원덕 임원항, 근덕 덕산항 하장 닷재, 도계 건의령";
+      document.getElementById('Phonenumber').textContent = "033-570-3844";
+      document.getElementById('Homepage').textContent = "http://www.samcheok.go.kr/tour.web";
+      document.getElementById('Intro').innerHTML = "<삼척 해맞이축제>는 매년 1월 1일 환상의 드라이브 코스로 유명한 새천년해안도로에서 펼쳐지는 삼척의 대표적인 겨울 축제로 시민과 관광객이 한자리에 모여 송구영신의 아쉬움과 희망을 담아보는 화합축제이다. 어슴푸레한 어둠과 구름을 뚫고 떠오르는 힘찬 일출의 감격이 꽁꽁 얼었던 몸과 마음을 녹인다.";
+
+      var samcheoksun = {lat: 37.229692, lng: 129.346098};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: samcheoksun
+        });
+        var marker = new google.maps.Marker({
+          position: samcheoksun,
+          map: map
+        });
+    }
+    else if(num == 8)
+    {
+      document.getElementById('Image').src = "./images/Kangwondo images/light.jpg";
+      document.getElementById('Title').textContent = "라이트 아트쇼 달빛호수";
+      document.getElementById('Term').textContent = "2018.02.03 ~ 2018.03.18";
+      document.getElementById('Address').textContent = "강원도 강릉시 경포로 365(저동)";
+      document.getElementById('Place').textContent = "강원도 강릉시 경포호 일원";
+      document.getElementById('Phonenumber').textContent = "1330";
+      document.getElementById('Homepage').textContent = "http://culture2018.com";
+      document.getElementById('Intro').innerHTML = "달에 대한 동경과 상상력으로 만들어진 미디어아트쇼.<br/>강릉을 상징하는 경포호수에서 대형조형물 및 빛의 미디어아트쇼를 관람할 수 있다. 어두움 밤을 환하게 밝힌 경포호수에서 낭만적인 추억을 만든다.";
+
+      var lightart = {lat: 37.795103, lng: 128.896593};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: lightart
+        });
+        var marker = new google.maps.Marker({
+          position: lightart,
+          map: map
+        });
+    }
+
+    document.getElementById('Eventinfor').style.display = "block";
+  }
+
+  function Season_Selector(num)
+  {
+    if(num == 1)
+    {
+      Season_bar_num = 1;//
+      stop_Summer_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Spring_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 2)
+    {
+      Season_bar_num = 2;//
+      stop_Spring_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Summer_interval();
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Summer").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 3)
+    {
+      Season_bar_num = 3;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Winter_interval();
+      start_Fall_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 4)
+    {
+      Season_bar_num = 4;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Fall_interval();
+      start_Winter_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+    }
+    Season_bar_fix(Season_bar_num);//
+  }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxRAiLM6U879XESA7-6C8GvnaouETN3Y&callback=initMap"></script>
+</body>
+</html>

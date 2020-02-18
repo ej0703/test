@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html>
+<head>
+  <title>전국축제</title>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+  #season
+  {
+    width : 1200px;
+    height : 740px;
+    margin  : 0 auto ;
+    position : relative;
+    top : 10px;
+  }
+  #spring
+  {
+    width : 400px;
+    height : 740px;
+    background-size: contain;
+    position : absolute;
+  }
+  div#spring img
+  {
+     border-radius: 15px;
+  }
+  div#spring img:hover
+  {
+    
+  }
+  #summer
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 300px;
+  }
+  div#summer img
+  {
+    
+  }
+  div#summer img:hover
+  {
+    
+  }
+  #fall
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 500px;
+    border-radius: 15px;
+  }
+  div#fall img
+  {
+    
+  }
+  div#fall img:hover
+  {
+    
+  }
+
+  #winter
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 750px;
+    border-radius: 15px;
+  }
+
+  div#winter img
+  {
+    border-radius: 15px;
+  }
+  div#winter img:hover
+  {
+   
+  }
+  #English{
+    border-radius: 0 10px 10px 0;
+  }
+  </style>
+</head>
+<body>
+
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="English" class="nav_menu_li"><a href="#" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <article>
+      <section>
+        <div id="season">
+        <div onmouseover="SpringOver(this)" id="spring">
+         <a href="Select.html"><img src="./images/Spring.png"/></a>
+        </div>
+        <div onmouseover="SummerOver(this)" id="summer">
+          <a href="Select.html"><img src="./images/Summer.png" onmouseover="Season_Choose(2)"/></a>
+        </div>
+        <div onmouseover="FallOver(this)" id="fall">
+          <a href="Select.html"><img src="./images/Fall.png" onmouseover="Season_Choose(3)"/></a>
+        </div>
+        <div onmouseover="WinterOver(this)" id="winter">
+          <a href="Select.html"><img src="./images/Winter.png" onmouseover="Season_Choose(4)"/></a>
+        </div>
+       </div>
+      </section>
+    </article>
+    <footer>
+    </footer>
+</div>
+<script>
+function SpringOver(obj){
+  sessionStorage.setItem("season_num",1);
+}
+function SummerOver(obj){
+  sessionStorage.setItem("season_num",2);
+}
+function FallOver(obj){
+  sessionStorage.setItem("season_num",3);
+}
+function WinterOver(obj){
+  sessionStorage.setItem("season_num",4);
+}
+</script>
+</body>
+</html>

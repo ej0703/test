@@ -1,0 +1,802 @@
+﻿<!doctype html>
+<html>
+<head>
+  <title>충청도 축제</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $('.nav_menu_li').hover(function () {
+  $(this).find('.inner-menu').show();
+  }, function () {
+  $(this).find('.inner-menu').hide();
+  });
+  });
+  </script>
+  <style>
+  #Eventinfor
+  {
+    width: 820px; height: 600px;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      z-index: 100;
+      margin-left: -400px;
+      display:none;
+  }
+  #API
+  {
+    width: 800px; height: 600px;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      z-index: 100;
+      margin-left: -400px;
+      display:none;
+  }
+  #Exitinfor
+   {
+      width: 800px; height: 30px;
+    }
+  #Infor
+  {
+    width: 800px;
+    height: 340px;
+  }
+  #Ipicture
+  {
+    float : left;
+    margin : 30px;
+    margin-top : 10px;
+  }
+  #Exitinfor a img
+  {
+    float : right;
+  }
+  #Image
+  {
+    width:250px;
+    height:300px;
+  }
+  #Eventintro
+  {
+    width : 740px;
+    height: 200px;
+  }
+  .Ititle
+  {
+    margin-top : 20px;
+    font-size : 27px;
+    height: 40px;
+    margin-bottom: -10px;
+  }
+  .Icontent
+  {
+    margin-top : 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .Introduce
+  {
+    margin-top : 30px;
+    height : 30px;
+    font-size : 20px;
+    margin-left : 15px;
+  }
+  #Title
+  {
+
+  }
+  #Term
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Address
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Place
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Phonenumber
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Homepage
+  {
+    margin-top: 2px;
+    color: white;
+    font-size: 13px;
+  }
+  #Intro
+  {
+    display : block;
+    margin-top : 3px;
+    color : white;
+    font-size : 13px;
+    margin-left : 15px;
+  }
+  .Eventinfor:hover
+  {
+    cursor: pointer;
+  }
+  content
+  {
+    width : 1200px;
+  }
+  #Event_Spring
+  {
+    display:none;
+    width: 1200px;
+    height: 350px;
+    left: 50%;
+    margin-left: -300px;
+    position: relative;
+  }
+  #Event_Summer
+  {
+    display:none;
+    width: 1200px;
+    height: 350px;
+    left: 50%;
+    margin-left: -300px;
+    position: relative;
+  }
+  #Event_Fall
+  {
+    display:none;
+    width: 1200px;
+    height: 350px;
+    left: 50%;
+    margin-left: -300px;
+    position: relative;
+  }
+  #Event_Winter
+  {
+    display:none;
+    width: 1200px;
+    height: 350px;
+    left: 50%;
+    margin-left: -300px;
+    position: relative;
+  }
+  .Each_Event
+  {
+    overflow: hidden;
+    display:inline-block;
+    width: 50%;
+    height: 100%;
+    position:relative;
+    transition: .4s;
+  }
+  .Each_Event img
+  {
+    width: 100%;
+    transition: .4s;
+  }
+  .Event_Information
+  {
+    padding: 8px;
+    opacity: 0;
+    transition: .4s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid white;
+    top : 50%;
+  }
+  .Event_Information:hover
+  {
+    color:white;
+    background-color: black;
+  }
+  .Each_Event:hover
+  {
+    background-color:rgba(255,255,255,0.3);
+  }
+  .Each_Event:hover div
+  {
+    opacity:1;
+    z-index:1;
+  }
+  .Each_Event:hover img
+  {
+    opacity:0.1;
+    z-index:10;
+  }
+  </style>
+  <script>
+  var Spring_arr=["images/Choongchungdo images/태안/태안 (1).jpg", "images/Choongchungdo images/태안/태안 (2).jpg", "images/Choongchungdo images/태안/태안 (3).jpg",
+"images/Choongchungdo images/태안/태안 (4).jpg", "images/Choongchungdo images/태안/태안 (5).jpg", "images/Choongchungdo images/태안/태안 (6).jpg"];
+var Spring_arr2=["images/Choongchungdo images/생거진천/생거진천 (1).jpeg", "images/Choongchungdo images/생거진천/생거진천 (2).jpg", "images/Choongchungdo images/생거진천/생거진천 (3).jpg"];
+  var Spring_i = 0;
+  var Spring_j = 0;
+
+  var Summer_arr=["images/Choongchungdo images/향수/향수 (1).jpg", "images/Choongchungdo images/향수/향수 (2).jpg", "images/Choongchungdo images/향수/향수 (3).jpg",
+"images/Choongchungdo images/향수/향수 (4).jpg", "images/Choongchungdo images/향수/향수 (5).jpg", "images/Choongchungdo images/향수/향수 (6).jpg",
+"images/Choongchungdo images/향수/향수 (7).jpg"];
+var Summer_arr2=["images/Choongchungdo images/괴산/괴산 (1).jpg", "images/Choongchungdo images/괴산/괴산 (2).jpg", "images/Choongchungdo images/괴산/괴산 (3).jpg"];
+  var Summer_i = 0;
+  var Summer_j = 0;
+
+  var Fall_arr=["images/Choongchungdo images/음성/음성 (1).jpg", "images/Choongchungdo images/음성/음성 (2).jpg", "images/Choongchungdo images/음성/음성 (3).jpg",
+  "images/Choongchungdo images/음성/음성 (4).jpg", "images/Choongchungdo images/음성/음성 (5).jpg", "images/Choongchungdo images/음성/음성 (6).jpg"];
+  var Fall_arr2=["images/Choongchungdo images/영동/영동 (1).jpg", "images/Choongchungdo images/영동/영동 (2).jpg", "images/Choongchungdo images/영동/영동 (3).jpg",
+"images/Choongchungdo images/영동/영동 (4).jpg", "images/Choongchungdo images/영동/영동 (5).jpg", "images/Choongchungdo images/영동/영동 (6).jpg",
+"images/Choongchungdo images/영동/영동 (7).jpg", "images/Choongchungdo images/영동/영동 (8).jpg", "images/Choongchungdo images/영동/영동 (9).jpg"];
+  var Fall_i = 0;
+  var Fall_j = 0;
+
+  var Winter_arr=["images/Choongchungdo images/난계/난계 (1).jpg", "images/Choongchungdo images/난계/난계 (2).jpg", "images/Choongchungdo images/난계/난계 (3).jpg",
+  "images/Choongchungdo images/난계/난계 (4).jpg", "images/Choongchungdo images/난계/난계 (5).jpg"];
+  var Winter_arr2=["images/Choongchungdo images/칠갑산/칠갑산 (1).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (2).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (3).jpg",
+"images/Choongchungdo images/칠갑산/칠갑산 (4).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (5).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (6).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (7).jpg",
+"images/Choongchungdo images/칠갑산/칠갑산 (8).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (9).jpg"];
+  var Winter_i = 0;
+  var Winter_j = 0;
+
+  var Spring_interval, Spring_interval2;
+  var Summer_interval, Summer_interval2;
+  var Fall_interval, Fall_interval2;
+  var Winter_interval, Winter_interval2;
+
+  function start_Spring_interval(){
+    var Spring_image = document.getElementById('Event_Spring_image_1');
+    var Spring_image2 = document.getElementById('Event_Spring_image_2');
+    Spring_interval = setInterval(function(){
+      Spring_image.src = Spring_arr[Spring_i%6];
+      Spring_i = Spring_i + 1;
+    }, 1000);//1000= 1sec
+    Spring_interval2 = setInterval(function(){
+      Spring_image2.src = Spring_arr2[Spring_j%3];
+      Spring_j = Spring_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Spring_interval(){
+    clearInterval(Spring_interval);
+    clearInterval(Spring_interval2);
+  }
+  function start_Summer_interval(){
+    var Summer_image = document.getElementById('Event_Summer_image_1');
+    var Summer_image2 = document.getElementById('Event_Summer_image_2');
+    Summer_interval = setInterval(function(){
+      Summer_image.src = Summer_arr[Summer_i%7];
+      Summer_i = Summer_i + 1;
+    }, 1000);//1000= 1sec
+    Summer_interval2 = setInterval(function(){
+      Summer_image2.src = Summer_arr2[Summer_j%3];
+      Summer_j = Summer_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Summer_interval(){
+    clearInterval(Summer_interval);
+    clearInterval(Summer_interval2);
+  }
+  function start_Fall_interval(){
+    var Fall_image = document.getElementById('Event_Fall_image_1');
+    var Fall_image2 = document.getElementById('Event_Fall_image_2');
+    Fall_interval = setInterval(function(){
+      Fall_image.src = Fall_arr[Fall_i%6];
+      Fall_i = Fall_i + 1;
+    }, 1000);//1000= 1sec
+    Fall_interval2 = setInterval(function(){
+      Fall_image2.src = Fall_arr2[Fall_j%9];
+      Fall_j = Fall_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Fall_interval(){
+    clearInterval(Fall_interval);
+    clearInterval(Fall_interval2);
+  }
+  function start_Winter_interval(){
+    var Winter_image = document.getElementById('Event_Winter_image_1');
+    var Winter_image2 = document.getElementById('Event_Winter_image_2');
+    Winter_interval = setInterval(function(){
+      Winter_image.src = Winter_arr[Winter_i%5];
+      Winter_i = Winter_i + 1;
+    }, 1000);//1000= 1sec
+    Winter_interval2 = setInterval(function(){
+      Winter_image2.src = Winter_arr2[Winter_j%9];
+      Winter_j = Winter_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Winter_interval(){
+    clearInterval(Winter_interval);
+    clearInterval(Winter_interval2);
+  }
+  </script>
+</head>
+<body>
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="Sel" class="nav_menu_li">
+                <span>지역 선택</span>
+                <ul class="inner-menu">
+                  <li class="inner-menu-item"><a href="Kyungkido.html">경기도</a></li>
+                  <li class="inner-menu-item"><a href="Kangwondo.html">강원도</a></li>
+                  <li class="inner-menu-item"><a href="Kyungsangdo.html">경상도</a></li>
+                  <li class="inner-menu-item"><a href="Jullado.html">전라도</a></li>
+                  <li class="inner-menu-item"><a href="Jejudo.html">제주도</a></li>
+                </ul>
+              </li>
+              <li id="English" class="nav_menu_li"><a href="#" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <aside>
+      <div>
+        <nav id="Season_bar">
+          <ul>
+            <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)"><a href="#" id="Spring_nav_a" class="nav_season_a" onclick="Season_Selector(1)">봄</a></li>
+            <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)"><a href="#" id="Summer_nav_a" class="nav_season_a" onclick="Season_Selector(2)">여름</a></li>
+            <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"><a href="#" id="Fall_nav_a" class="nav_season_a" onclick="Season_Selector(3)">가을</a></li>
+            <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)"><a href="#" id="Winter_nav_a" class="nav_season_a" onclick="Season_Selector(4)">겨울</a></li>
+            <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+          </ul>
+          </nav>
+        </div>
+      </aside>
+      <article>
+        <section>
+          <div id="Eventinfor">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Right">
+              <img src="./images/right.png" width=30 height=30 onClick="Next(1)"/>
+            </div>
+            <div id="Infor">
+              <div id="Ipicture"><img id="Image"></div>
+              <div class="Ititle"><p id="Title"></p></div>
+              <div class="Icontent">행사기간<p id="Term"></p></div>
+              <div class="Icontent">위치<p id="Address"></p></div>
+              <div class="Icontent">행사장소<p id="Place"></p></div>
+              <div class="Icontent">연락처<p id="Phonenumber"></p></div>
+              <div class="Icontent">홈페이지<p id="Homepage"></p></div>
+            </div>
+            <div id="Eventintro">
+              <div class="Introduce">행사소개<p id="Intro"></p></div>
+            </div>
+          </div>
+          <div id="API">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Left">
+              <img src="./images/left.png" width=30 height=30 onClick="Next(2)"/>
+            </div>
+            <div id="Map"></div>
+          </div>
+        </section>
+        <content>
+          <div id="Event_Spring">
+            <div class="Each_Event">
+              <div class="Event_Information" onclick="Infornum(1)"><a>행사 정보</a></div>
+              <img src="./images/Choongchungdo images/태안/태안 (6).jpg" id="Event_Spring_image_1" width=300 height=400/>
+              </div>
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(2)"><a>행사 정보</a></div>
+                <img src="./images/Choongchungdo images/생거진천/생거진천 (3).jpg" id="Event_Spring_image_2" width=300 height=400/>
+                </div>
+            </div>
+            <div id="Event_Summer">
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(3)"><a>행사 정보</a></div>
+                <img src="./images/Choongchungdo images/향수/향수 (7).jpg" id="Event_Summer_image_1" width=300 height=400/>
+                </div>
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(4)"><a>행사 정보</a></div>
+                  <img src="./images/Choongchungdo images/괴산/괴산 (3).jpg" id="Event_Summer_image_2" width=300 height=400/>
+                  </div>
+              </div>
+              <div id="Event_Fall">
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(5)"><a>행사 정보</a></div>
+                  <img src="./images/Choongchungdo images/음성/음성 (6).jpg" id="Event_Fall_image_1" width=300 height=400/>
+                  </div>
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(6)"><a>행사 정보</a></div>
+                    <img src="./images/Choongchungdo images/영동/영동 (9).jpg" id="Event_Fall_image_2" width=300 height=400/>
+                    </div>
+                </div>
+                <div id="Event_Winter" >
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(7)"><a>행사 정보</a></div>
+                    <img src="./images/Choongchungdo images/난계/난계 (5).jpg" id="Event_Winter_image_1" width=300 height=400/>
+                    </div>
+                    <div class="Each_Event">
+                      <div class="Event_Information" onclick="Infornum(8)"><a>행사 정보</a></div>
+                      <img src="./images/Choongchungdo images/칠갑산/칠갑산 (9).jpg" id="Event_Winter_image_2" width=300 height=400/>
+                      </div>
+                  </div>
+        </content>
+      </article>
+  </div>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+        // Retrieve
+        var a;
+        var Season_bar_num;
+        a = sessionStorage.getItem("season_num");
+        Season_bar_num = a;
+        Season_Selector(a);
+        Season_bar_fix(Season_bar_num);
+    }
+
+    function Season_bar_fix(Season_bar_num){
+        if(Season_bar_num==1){//
+          document.getElementById("Summer_nav_a").innerHTML = "여름";
+          document.getElementById("Fall_nav_a").innerHTML = "가을";
+          document.getElementById("Winter_nav_a").innerHTML = "겨울";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+          document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Spring_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==2){
+          document.getElementById("Spring_nav_a").innerHTML = "봄";
+          document.getElementById("Fall_nav_a").innerHTML = "가을";
+          document.getElementById("Winter_nav_a").innerHTML = "겨울";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+          document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Summer_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==3){
+          document.getElementById("Spring_nav_a").innerHTML = "봄";
+          document.getElementById("Summer_nav_a").innerHTML = "여름";
+          document.getElementById("Winter_nav_a").innerHTML = "겨울";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+          document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Fall_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==4){
+          document.getElementById("Spring_nav_a").innerHTML = "봄";
+          document.getElementById("Summer_nav_a").innerHTML = "여름";
+          document.getElementById("Fall_nav_a").innerHTML = "가을";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+          document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Winter_nav_a").innerHTML = "";
+        }
+      }
+
+      function Spring_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "3~5월";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Summer_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "6~8월";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Fall_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "9~11월";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Winter_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "11~2월";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Month_hide(obj){
+        document.getElementById("Month_nav").style.display = "none";//
+      }
+
+  function Infornum(num)
+  {
+    if(num == 1)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/tae-an.jpg";
+      document.getElementById('Title').textContent = "태안 세계튤립축제";
+      document.getElementById('Term').textContent = "2018.04.19 ~ 2018.05.13";
+      document.getElementById('Address').textContent = "충청남도 태안군 안면읍 꽃지해안로 400";
+      document.getElementById('Place').textContent = "꽃지 해수욕장";
+      document.getElementById('Phonenumber').textContent = "041-675-9200";
+      document.getElementById('Homepage').textContent = "http://www.koreaflowerpark.com";
+      document.getElementById('Intro').innerHTML = "2002년, 2009년 안면도 국제 꽃 박람회의 영광을 다시 한 번!<br/>2018 태안 세계튤립축제는 WTS(World Tulip Summit)로부터 2015년에 이어 2017년에도 세계 5대 튤립축제의 재 선정되는 기염을 토했다. 이번에는 장소를 옮겨 네이처월드가 아닌 2002년과 2009년 안면도 국제 꽃 박람회가 펼쳐졌던 꽃지 해안공원에서 옛 영광을 재현하고자 한다. 드넓게 펼쳐진 바다와 모래사장 그리고 수백만 송이의 튤립을 만나 보실 수 있다. ";
+
+      var taean = {lat: 36.498433, lng: 126.337186};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: taean
+        });
+        var marker = new google.maps.Marker({
+          position: taean,
+          map: map
+          });
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/nong.jpg";
+      document.getElementById('Title').textContent = "생거진천 농다리축제";
+      document.getElementById('Term').textContent = "2018.05.25 ~ 2018.05.27";
+      document.getElementById('Address').textContent = "충청북도 진천군 문백면 농다리로 1032-11";
+      document.getElementById('Place').textContent = "농다리 일원";
+      document.getElementById('Phonenumber').textContent = "043-539-3601~2";
+      document.getElementById('Homepage').textContent = "http://www.jincheon.go.kr";
+      document.getElementById('Intro').innerHTML = "농다리축제는 소중한 문화유산을 널리 알리고 소중한 문화유산 보존의 중요성을 일깨움은 물론 조상의 슬기를 배워가고자 농다리를 테마로한 이색적 축제이다. 농다리는 고려초기에 놓여져 1천년의 신비를 지닌 국내 유일의 돌다리로 지방유형문화재 제28호로 지정되어 보호되고 있는 「생거진천」의 귀중한 문화유산으로 총길이 94m 폭 3.6m 교각의 두께가 1.2m이며, 교각과 교각의 사이는 0.8m로 자주빛 자연석을 그대로 쌓았음에도 견고하여 장마가 져도 다리위로 물이 흐르도록 설계되어 1000년의 세월에도 유실되지 않는 축조기술이 매우 뛰어난 유산임을 알 수 있다.<br/>- 1일차 : 농다리고유제, 진천어린이합창단 공연, 개막식, 농다리 점등식, 축하공연, 불꽃놀이<br/>- 2일차 : 백일장 및 사생대회, 견지낚시대회, 모듬북과 비나리, 상여다리건너기, 농사철 다리밟기 등 <br/>- 3일차 : 입시전략특강, 농다리 씨름대회, 소원풍선 날리기, 등용문걷기대회, 공신들의 비법전수 등";
+
+      var jincheon = {lat: 36.829395, lng: 127.490714};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: jincheon
+        });
+        var marker = new google.maps.Marker({
+          position: jincheon,
+          map: map
+        });
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/ok.jpg";
+      document.getElementById('Title').textContent = "향수 옥천 포도 복숭아 축제";
+      document.getElementById('Term').textContent = "2018.07.20 ~ 2018.07.22";
+      document.getElementById('Address').textContent = "충청북도 옥천군 옥천읍 관성로 53(옥천읍)";
+      document.getElementById('Place').textContent = "옥천공설운동장 일원";
+      document.getElementById('Phonenumber').textContent = "043-730-3284";
+      document.getElementById('Homepage').textContent = "http://www.oc.go.kr/html/grape";
+      document.getElementById('Intro').innerHTML = "충북 옥천은 대한민국 시설포도 주산단지이다. 일조량이 풍부하고 주야간 일교차가 커 탐스러운 포도가 대량 생산되고, 2016년 국가브랜드 포도부문 대상을 수상하였다. 대청호반 기름진 땅에서 재배되는 옥천 복숭아는 맛이 달고 향이 그윽하여 소비자의 인기를 독차지 하고 있다. 앞으로 고향을 생각나게 하는 옥천의 명품 포도·복숭아를 주제로 소비자에게 가까이 다가갈 것이다. ";
+
+      var okcheon = {lat: 36.302579, lng: 127.574110};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: okcheon
+        });
+        var marker = new google.maps.Marker({
+          position: okcheon,
+          map: map
+        });
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/go.jpg";
+      document.getElementById('Title').textContent = "괴산 고추축제";
+      document.getElementById('Term').textContent = "2018.08.30 ~ 2018.09.02";
+      document.getElementById('Address').textContent = "충청북도 괴산군 괴산읍 입꺽정로 90";
+      document.getElementById('Place').textContent = "문화체육센터, 미니축구장, 종합운동장, 동진천 일원";
+      document.getElementById('Phonenumber').textContent = "043-830-3461~3";
+      document.getElementById('Homepage').textContent = "http://www.goesan.go.kr/festival";
+      document.getElementById('Intro').innerHTML = "고추는 국내에 전래되어 400년의 역사와 함께 농업경제와 국민 식생활의 중심에 있으며 사회, 정신, 문화에까지 영향을 크게 미치는 주요 작물로 국내 시장규모는 1조 2천억 여원 규모로 과채류 중에서 가장 생산액이 높으며 쌀 다음으로 중요한 농산물로 자리 잡고 있다. 괴산군은 조선시대부터 고추를 재배한 지역으로 농가경제에 가장 큰 비중을 차지하는 지역특화작물이다. 괴산청결고추는 전국 최초로 고추산업특구지정, 지리적표시제등록, ISO품질인증, 클러스터사업선정, HACCP인증, 괴산고추 지리적표시등록, 괴산고춧가루 지리적표시등록, 대한민국우수특산품대상선정 등으로 전국 최고의 명품 브랜드로 소비자들에게 각광받고 있다. 이러한 배경으로 2001년부터 개최되어온 <괴산고추축제>는 본격적인 고추출하시기인 매년 8월 하순에서 9월 초순경 4일간의 일정으로 치루어지며 수십만명의 관광객이 찾아와 축제를 만끽하고 있다. ";
+
+      var goesan = {lat: 36.815486, lng: 127.786848};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: goesan
+        });
+        var marker = new google.maps.Marker({
+          position: goesan,
+          map: map
+        });
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/sung.jpg";
+      document.getElementById('Title').textContent = "음성 인삼 축제";
+      document.getElementById('Term').textContent = "2018.10.10 ~ 2018.10.14";
+      document.getElementById('Address').textContent = "충청북도 음성군 금왕읍 응천서길 25";
+      document.getElementById('Place').textContent = "금왕읍 응천 행사장";
+      document.getElementById('Phonenumber').textContent = "043-871-3692";
+      document.getElementById('Homepage').textContent = "http://www.eumseong.go.kr/tour";
+      document.getElementById('Intro').innerHTML = "중부권 최대 인삼주산지 음성인삼의 우수성과 지역 농특산물 홍보를 통한 지역경제활성화를 위해 금년 6회째 추진하는 행사로 행사기간 전국 최고 품질의 음성인삼을 저렴한 가격으로 구입가능하며, 각종 공연과 체험, 먹거리 장터를 운영할 예정이다. ";
+
+      var insam = {lat: 36.990790, lng: 127.595134};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: insam
+        });
+        var marker = new google.maps.Marker({
+          position: insam,
+          map: map
+        });
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/young.jpg";
+      document.getElementById('Title').textContent = "영동 난계 국악 축제";
+      document.getElementById('Term').textContent = "2018.10.11 ~ 2018.10.14";
+      document.getElementById('Address').textContent = "충청북도 영동군 영동읍 부용리";
+      document.getElementById('Place').textContent = "충북 영동 - 영동 하상주차장 일원, 난계사 등";
+      document.getElementById('Phonenumber').textContent = "043-745-8917";
+      document.getElementById('Homepage').textContent = "http://ydft.kr";
+      document.getElementById('Intro').innerHTML = "우리나라 최고의 악성이신 난계 박연 선생의 음악적 업적을 기리고 전통문화예술의 진흥을 위해 매년 영동에서 열리고 있는 '영동난계국악축제'는 2018년 지역대표 공연예술제로서 국내 유일의 국악 축제이자 대한민국 종합 국악페스티벌이다. 특히 올해 51회 축제는 와인축제와 더불어 어가행렬 및 종묘제례 시연, 전통 국악공연 등 다양한 볼거리와 향토 먹거리, 국악기 제작과 연주 체험 등 다양한 프로그램을 준비하여 전통 국악을 통해 모두가 함께 어우러질 수 있는 축제의 장을 마련하였다. ";
+
+      var gookak = {lat: 36.173459, lng: 127.753118};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: gookak
+        });
+        var marker = new google.maps.Marker({
+          position: gookak,
+          map: map
+        });
+    }
+    else if(num == 7)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/sang.jpg";
+      document.getElementById('Title').textContent = "난계 국악단 상설공연";
+      document.getElementById('Term').textContent = "2018.01.06 ~ 2018.12.29";
+      document.getElementById('Address').textContent = "충청북도 영동군 심천면 국악로1길 33";
+      document.getElementById('Place').textContent = "영동국악체험촌 우리소리관";
+      document.getElementById('Phonenumber').textContent = "043-740-3224";
+      document.getElementById('Homepage').textContent = "http://gugak.yd21.go.kr";
+      document.getElementById('Intro').innerHTML = "고구려의 왕산악, 가야의 우륵과 더불어 우리나라 3대 악성으로 손꼽히는 난계 박연의 얼과 정신을 기리고자, 그의 고향인 충북 영동에서는 문화체육관광부 후원 <난계국악단 상설공연>이 진행된다. 난계의 뜻을 계승하기 위해 1991년, 우리나라 최초로 군립국악단인 '난계국악단'을 설립, 1994년 전국 국악관현악축제 개막 공연을 시작으로 해마다 100여 회의 공연을 통해 일반 관객과 소통하고 있다. 이어 2000년에는 난계국악박물관, 2006년에는 난계국악체험전수관, 2015년 영동국악체험관을 개관하면서 영동은 명실상부 우리나라를 대표하는 국악의 메카로 거듭나고 있다. 매주 토요일, 영동국악체험촌에서 열리는 <난계국악단 상설공연>은 우리 고유의 전통인 국악의 위상을 드높이고 그 가치와 중요성을 되새긴다.";
+
+      var nangae = {lat: 36.212120, lng: 127.699601};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: nangae
+        });
+        var marker = new google.maps.Marker({
+          position: nangae,
+          map: map
+        });
+    }
+    else if(num == 8)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/chil.jpg";
+      document.getElementById('Title').textContent = "칠갑산 얼음 분수 축제";
+      document.getElementById('Term').textContent = "2017.12.23 ~ 2018.02.18";
+      document.getElementById('Address').textContent = "충청남도 청양군 정산면 천장호길 175-11";
+      document.getElementById('Place').textContent = "청양 알프스마을 축제장 일원";
+      document.getElementById('Phonenumber').textContent = "041-942-0797~8";
+      document.getElementById('Homepage').textContent = "http://www.alpsvill.com";
+      document.getElementById('Intro').innerHTML = "“동화나라 친구들 모여라~!“<br/>커다란 얼음분수가 만들어놓은 알프스 성에<br/>동화나라 캐릭터들이 모두 모여 함께하는 칠갑산 겨울왕국.<br/>칠갑산에 까만 어둠이 내리면 반짝반짝 은하수 별빛아래 화려한 옷으로 갈아입는 야간개장.<br/>아이들에게 소중한 추억을 남기고 연인들에게는 겨울철 데이트 코스로 안성맞춤.<br/>5분 거리에는 1박2일 촬영지로 유명한 전국 최장의 천장호 출렁다리.<br/>겨울엔 칠갑산겨울왕국! 칠갑산 얼음분수축제에 놀러오길 바란다.";
+
+      var chilgap = {lat: 36.409488, lng: 126.916030};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: chilgap
+        });
+        var marker = new google.maps.Marker({
+          position: chilgap,
+          map: map
+        });
+    }
+
+    document.getElementById('Eventinfor').style.display = "block";
+  }
+
+  function Season_Selector(num)
+  {
+    if(num == 1)
+    {
+      Season_bar_num = 1;
+      stop_Summer_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Spring_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 2)
+    {
+      Season_bar_num = 2;
+      stop_Spring_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Summer_interval();
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Summer").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 3)
+    {
+      Season_bar_num = 3;
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Winter_interval();
+      start_Fall_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 4)
+    {
+      Season_bar_num = 4;
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Fall_interval();
+      start_Winter_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+    }
+    Season_bar_fix(Season_bar_num);
+  }
+  function Next(num)
+{
+  if(num == 1)
+  {
+    document.getElementById('API').style.display = "block";
+    document.getElementById('Eventinfor').style.display = "none";
+  }
+  if(num == 2)
+  {
+    document.getElementById('Eventinfor').style.display = "block";
+    document.getElementById('API').style.display = "none";
+  }
+}
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxRAiLM6U879XESA7-6C8GvnaouETN3Y&callback=initMap"></script>
+</body>
+</html>

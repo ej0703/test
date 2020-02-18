@@ -1,0 +1,576 @@
+﻿<!doctype html>
+<html>
+<head>
+  <title>지역 선택</title>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+  #English{
+    border-radius: 0 10px 10px 0;
+  }
+#Wholemap
+{
+  margin  : 5px ;
+  margin-left : 200px;
+  width: 400px;
+  position : relative;
+}
+
+#Kyungkido
+{
+  position : absolute;
+  top : 35px;
+  left : 18px;
+}
+
+div#Kyungkido img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Kangwondo
+{
+  position : absolute;
+  left : 160px;
+}
+
+div#Kangwondo img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Choongchungdo
+{
+  position : absolute;
+  top : 187px;
+  left : 34px;
+}
+
+div#Choongchungdo img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Kyungsangdo
+{
+  position : absolute;
+  top : 195px;
+  left : 208px;
+}
+
+div#Kyungsangdo img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Jullado
+{
+  position : absolute;
+  top : 337px;
+}
+
+div#Jullado img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Jejudo
+{
+  position : absolute;
+  top : 650px;
+  left : 20px;
+}
+
+div#Jejudo img:hover
+{
+  border : 1px solid rgba(255,255,255,0);
+}
+
+#Preview
+{
+  background-color: rgba(0,0,0,0.7);
+  position: relative;
+  margin-left: 770px;
+  width : 500px;
+  height: 740px;
+  border-radius: 20px;
+}
+
+.Each_information{
+  display: inline-block;
+  margin : 5px;
+  padding-left: 10px;
+}
+.Each_information p{
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  margin-bottom:-2px;
+}
+#Region{
+  color:white;
+  display:block;
+  text-align: center;
+  padding-top: 20px;
+  text-shadow: 2px 2px 2px pink;
+}
+#Month_nav{/*22*/
+  display:none;
+}
+</style>
+</head>
+<body>
+
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="English" class="nav_menu_li"><a href="#" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+  <aside>
+    <div>
+      <nav id="Season_bar">
+          <ul>
+            <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)" onclick="SpringOver(this)"><a href="#" id="Spring_nav_a" class="nav_season_a">봄</a></li>
+            <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)" onclick="SummerOver(this)"><a href="#" id="Summer_nav_a" class="nav_season_a">여름</a></li>
+            <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"onclick="FallOver(this)"><a href="#" id="Fall_nav_a" class="nav_season_a">가을</a></li>
+            <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)" onclick="WinterOver(this)"><a href="#" id="Winter_nav_a" class="nav_season_a">겨울</a></li>
+            <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+          </ul>
+      </nav>
+    </div>
+  </aside>
+    <article>
+      <section>
+        <div id="Wholemap">
+          <div id="Kyungkido" onmouseover="Information(1)">
+            <a href="Kyungkido.html"><img src="./images/Kyungkido1.png"/></a>
+          </div>
+          <div id="Kangwondo" onmouseover="Information(2)">
+            <a href="Kangwondo.html"><img src="./images/Kangwondo1.png"/></a>
+          </div>
+          <div id="Choongchungdo" onmouseover="Information(3)">
+            <a href="Choongchungdo.html"><img src="./images/Choongchungdo1.png"/></a>
+          </div>
+          <div id="Kyungsangdo" onmouseover="Information(4)">
+            <a href="Kyungsangdo.html"><img src="./images/Kyungsangdo1.png"/></a>
+          </div>
+          <div id="Jullado" onmouseover="Information(5)">
+            <a href="Jullado.html"><img src="./images/Jullado1.png"/></a>
+          </div>
+          <div id="Jejudo" onmouseover="Information(6)">
+            <a href="Jejudo.html"><img src="./images/Jejudo1.png"/></a>
+          </div>
+       </div>
+       <div id="Preview">
+         <h2 id="Region"></h2>
+         <div class="Each_information">
+           <img id="Image1" width="140px" height="140px"/>
+           <p id="Title1"></p>
+           <p id="Term1"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image2" width="140px" height="140px"/>
+           <p id="Title2"></p>
+           <p id="Term2"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image3" width="140px" height="140px"/>
+           <p id="Title3"></p>
+           <p id="Term3"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image4" width="140px" height="140px"/>
+           <p id="Title4"></p>
+           <p id="Term4"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image5" width="140px" height="140px"/>
+           <p id="Title5"></p>
+           <p id="Term5"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image6" width="140px" height="140px"/>
+           <p id="Title6"></p>
+           <p id="Term6"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image7" width="140px" height="140px"/>
+           <p id="Title7"></p>
+           <p id="Term7"></p>
+         </div>
+         <div class="Each_information">
+           <img id="Image8" width="140px" height="140px"/>
+           <p id="Title8"></p>
+           <p id="Term8"></p>
+         </div>
+       </div>
+       <script>
+      window.onload = function() {Information(1)};
+       </script>
+      </section>
+    </article>
+    <footer>
+    </footer>
+  </div>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+      // Retrieve
+      var a;
+      a = sessionStorage.getItem("season_num");
+      Season_Selector(a);
+  }
+
+  function Spring_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "3~5월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Summer_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "6~8월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Fall_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "9~11월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Winter_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "11~2월";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Season_bar_fix(Season_bar_num){
+    if(Season_bar_num==1){//
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+      document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Spring_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==2){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+      document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Summer_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==3){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Winter_nav_a").innerHTML = "겨울";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+      document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Fall_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==4){
+      document.getElementById("Spring_nav_a").innerHTML = "봄";
+      document.getElementById("Summer_nav_a").innerHTML = "여름";
+      document.getElementById("Fall_nav_a").innerHTML = "가을";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+      document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Winter_nav_a").innerHTML = "";
+    }
+  }
+  function Month_hide(obj){
+    document.getElementById("Month_nav").style.display = "none";
+  }
+
+  function SpringOver(obj){
+    Season_bar_num = 1;
+    Season_bar_fix(Season_bar_num);
+    sessionStorage.setItem("season_num",1);
+  }
+  function SummerOver(obj){
+    Season_bar_num = 2;
+    Season_bar_fix(Season_bar_num);
+    sessionStorage.setItem("season_num",2);
+  }
+  function FallOver(obj){
+    Season_bar_num = 3;
+    Season_bar_fix(Season_bar_num);
+    sessionStorage.setItem("season_num",3);
+  }
+  function WinterOver(obj){
+    Season_bar_num = 4;
+    Season_bar_fix(Season_bar_num);
+    sessionStorage.setItem("season_num",4);
+  }
+
+  function Information(num)
+  {
+    if(a==1){
+      document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+      document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Spring_nav_a").innerHTML = "";
+    }
+    else if(a==2){
+      document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+      document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Summer_nav_a").innerHTML = "";
+    }
+    else if(a==3){
+      document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+      document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Fall_nav_a").innerHTML = "";
+    }
+    else if(a==4){
+      document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+      document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Winter_nav_a").innerHTML = "";
+    }
+    if(num == 1)
+    {
+      document.getElementById('Region').textContent = "경기도";
+
+      document.getElementById('Image1').src = "./images/Kyungkido images/꽃박람회/꽃박람회 (6).jpg";
+      document.getElementById('Title1').textContent = "고양 국제 꽃 박람회";
+      document.getElementById('Term1').textContent = "2018.04.27 ~ 2018.05.13";
+
+      document.getElementById('Image2').src = "./images/Kyungkido images/서울랜드/서울랜드 (8).jpg";
+      document.getElementById('Title2').textContent = "서울랜드 캐릭터 플라워 페스티벌";
+      document.getElementById('Term2').textContent = "2018.03.24 ~ 2018.06.06";
+
+      document.getElementById('Image3').src = "./images/Kyungkido images/레인보우/레인보우 (7).jpg";
+      document.getElementById('Title3').textContent = "레인보우 아일랜드";
+      document.getElementById('Term3').textContent = "2018.06.02 ~ 2018.06.03";
+
+      document.getElementById('Image4').src = "./images/Kyungkido images/양평물축제/양평물축제 (6).jpg";
+      document.getElementById('Title4').textContent = "양평 물축제";
+      document.getElementById('Term4').textContent = "2018.08.03 ~ 2018.08.05";
+
+      document.getElementById('Image5').src = "./images/Kyungkido images/수원화성/화성10.jpg";
+      document.getElementById('Title5').textContent = "수원 화성 행궁";
+      document.getElementById('Term5').textContent = "2018.10.12 ~ 2018.10.14";
+
+      document.getElementById('Image6').src = "./images/Kyungkido images/자라섬/자라섬-5.jpg";
+      document.getElementById('Title6').textContent = "자라섬 국제 재즈 페스티벌 2018";
+      document.getElementById('Term6').textContent = "2018.10.12 ~ 2018.10.14";
+
+      document.getElementById('Image7').src = "./images/Kyungkido images/아인스월드/아인스월드_12.jpg";
+      document.getElementById('Title7').innerHTML = "부천 아인스월드 빛축제";
+      document.getElementById('Term7').textContent = "2018.11 ~ 2019.02";
+
+      document.getElementById('Image8').src = "./images/Kyungkido images/프로방스/프로방스 (18).jpg";
+      document.getElementById('Title8').textContent = "파주 프로방스 별빛축제";
+      document.getElementById('Term8').textContent = "2017.11.25 ~ 2018.03.31";
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Region').textContent = "강원도";
+
+      document.getElementById('Image1').src = "./images/Kangwondo images/duta.jpg";
+      document.getElementById('Title1').textContent = "두타산 산나물 축제";
+      document.getElementById('Term1').textContent = "2018.05.18 ~ 2018.05.20";
+
+      document.getElementById('Image2').src = "./images/Kangwondo images/nam.jpg";
+      document.getElementById('Title2').textContent = "남이섬 어쿠스틱 청춘 페스티벌";
+      document.getElementById('Term2').textContent = "2018.05.12 ~ 2018.06.03";
+
+      document.getElementById('Image3').src = "./images/Kangwondo images/susu.jpg";
+      document.getElementById('Title3').textContent = "홍천 찰옥수수축제";
+      document.getElementById('Term3').textContent = "2018.07.27 ~ 2018.07.29";
+
+      document.getElementById('Image4').src = "./images/Kangwondo images/jae.jpg";
+      document.getElementById('Title4').textContent = "평창 대관령 음악제";
+      document.getElementById('Term4').textContent = "2018.07.23 ~ 2018.08.05";
+
+      document.getElementById('Image5').src = "./images/Kangwondo images/sok.jpg";
+      document.getElementById('Title5').textContent = "속초 음악불꽃 크루즈";
+      document.getElementById('Term5').textContent = "2018.05.03 ~ 2018.12.30";
+
+      document.getElementById('Image6').src = "./images/Kangwondo images/sung.jpg";
+      document.getElementById('Title6').textContent = "횡성 한우축제";
+      document.getElementById('Term6').textContent = "2018.10.05 ~ 2018.10.09";
+
+      document.getElementById('Image7').src = "./images/Kangwondo images/sam.png";
+      document.getElementById('Title7').textContent = "삼척 해맞이축제";
+      document.getElementById('Term7').textContent = "2018.01.01 ~ 2018.01.01";
+
+      document.getElementById('Image8').src = "./images/Kangwondo images/light.jpg";
+      document.getElementById('Title8').textContent = "라이트 아트쇼 달빛호수";
+      document.getElementById('Term8').textContent = "2018.02.03 ~ 2018.03.18";
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Region').textContent = "충청도";
+
+      document.getElementById('Image1').src = "./images/Choongchungdo images/tae-an.jpg";
+      document.getElementById('Title1').textContent = "태안 세계 튤립축제";
+      document.getElementById('Term1').textContent = "2018.04.19 ~ 2018.05.13";
+
+      document.getElementById('Image2').src = "./images/Choongchungdo images/nong.jpg";
+      document.getElementById('Title2').textContent = "생거진천 농다리축제";
+      document.getElementById('Term2').textContent = "2018.05.25 ~ 2018.05.27";
+
+      document.getElementById('Image3').src = "./images/Choongchungdo images/ok.jpg";
+      document.getElementById('Title3').textContent = "향수 옥천 포도 복숭아 축제";
+      document.getElementById('Term3').textContent = "2018.07.20 ~ 2018.07.22";
+
+      document.getElementById('Image4').src = "./images/Choongchungdo images/go.jpg";
+      document.getElementById('Title4').textContent = "괴산 고추축제";
+      document.getElementById('Term4').textContent = "2018.08.30 ~ 2018.09.02";
+
+      document.getElementById('Image5').src = "./images/Choongchungdo images/sung.jpg";
+      document.getElementById('Title5').textContent = "음성 인삼 축제";
+      document.getElementById('Term5').textContent = "2018.10.10 ~ 2018.10.14";
+
+      document.getElementById('Image6').src = "./images/Choongchungdo images/young.jpg";
+      document.getElementById('Title6').textContent = "영동 난계 국악 축제";
+      document.getElementById('Term6').textContent = "2018.10.11 ~ 2018.10.14";
+
+      document.getElementById('Image7').src = "./images/Choongchungdo images/sang.jpg";
+      document.getElementById('Title7').textContent = "난계 국악단 상설공연";
+      document.getElementById('Term7').textContent = "2018.01.06 ~ 2018.12,29";
+
+      document.getElementById('Image8').src = "./images/Choongchungdo images/chil.jpg";
+      document.getElementById('Title8').textContent = "칠갑산 얼음 분수 축제";
+      document.getElementById('Term8').textContent = "2017,12,23 ~ 2018.02.18";
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Region').textContent = "경상도";
+
+      document.getElementById('Image1').src = "./images/Kyungsangdo images/yun.jpg";
+      document.getElementById('Title1').textContent = "의성 세계 연축제";
+      document.getElementById('Term1').textContent = "2018.05.05 ~ 2018.05.07";
+
+      document.getElementById('Image2').src = "./images/Kyungsangdo images/sung.jpg";
+      document.getElementById('Title2').textContent = "성주 생명 문화 축제";
+      document.getElementById('Term2').textContent = "2018.05.17 ~ 2018.05.20";
+
+      document.getElementById('Image3').src = "./images/Kyungsangdo images/beer.png";
+      document.getElementById('Title3').textContent = "창원 비어 뮤직페스티벌";
+      document.getElementById('Term3').textContent = "2018.07.23 ~ 2018.07.29";
+
+      document.getElementById('Image4').src = "./images/Kyungsangdo images/jun.jpg";
+      document.getElementById('Title4').textContent = "삼천포항 자연산 전어축제";
+      document.getElementById('Term4').textContent = "2018.07.25 ~ 2018.07.29";
+
+      document.getElementById('Image5').src = "./images/Kyungsangdo images/song.jpg";
+      document.getElementById('Title5').textContent = "봉화 송이축제";
+      document.getElementById('Term5').textContent = "2018.09.29 ~ 2018.10.02";
+
+      document.getElementById('Image6').src = "./images/Kyungsangdo images/sa.png";
+      document.getElementById('Title6').textContent = "사천시 농업 한마당 축제";
+      document.getElementById('Term6').textContent = "2018.10.27 ~ 2018.10.29";
+
+      document.getElementById('Image7').src = "./images/Kyungsangdo images/pg.jpg";
+      document.getElementById('Title7').textContent = "거제도 국제 펭귄수영축제";
+      document.getElementById('Term7').textContent = "2018.01.20 ~ 2018.01.20";
+
+      document.getElementById('Image8').src = "./images/Kyungsangdo images/andong.jpg";
+      document.getElementById('Title8').textContent = "안동 암산얼음축제";
+      document.getElementById('Term8').textContent = "2018.01.20 ~ 2018.01.28";
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Region').textContent = "전라도";
+
+      document.getElementById('Image1').src = "./images/Jullado images/함평/함평 (4).jpg";
+      document.getElementById('Title1').textContent = "함평 나비대축제";
+      document.getElementById('Term1').textContent = "2018.04.27 ~ 2018.05.27";
+
+      document.getElementById('Image2').src = "./images/Jullado images/영취산/영취산 (5).png";
+      document.getElementById('Title2').textContent = "영취산 진달래축제";
+      document.getElementById('Term2').textContent = "2018.03.30 ~ 2018.04.01";
+
+      document.getElementById('Image3').src = "./images/Jullado images/전주/전주 (10).jpg";
+      document.getElementById('Title3').textContent = "전주 한옥마을 경기전";
+      document.getElementById('Term3').textContent = "2018.05.12 ~ 2018.09.29";
+
+      document.getElementById('Image4').src = "./images/Jullado images/정남/정남 (22).jpg";
+      document.getElementById('Title4').textContent = "정남진 장흥 물축제";
+      document.getElementById('Term4').textContent = "2018.07.27 ~ 2018.08.02";
+
+      document.getElementById('Image5').src = "./images/Jullado images/익산/익산 (5).jpg";
+      document.getElementById('Title5').textContent = "익산 천만송이 국화축제";
+      document.getElementById('Term5').textContent = "2018.10.26 ~ 2018.11,04";
+
+      document.getElementById('Image6').src = "./images/Jullado images/화순/화순 (5).jpg";
+      document.getElementById('Title6').textContent = "화순 국화향연";
+      document.getElementById('Term6').textContent = "2018.10.26 ~ 2018.11.11";
+
+      document.getElementById('Image7').src = "./images/Jullado images/지리산/지리산 (12).png";
+      document.getElementById('Title7').textContent = "지리산 남원 바래봉 눈꽃축제";
+      document.getElementById('Term7').textContent = "2017.12.30 ~ 2018.02.11";
+
+      document.getElementById('Image8').src = "./images/Jullado images/보성/보성 (4).jpg";
+      document.getElementById('Title8').textContent = "보성차 밭빛축제";
+      document.getElementById('Term8').textContent = "2017.12.15 ~ 2018.01.14";
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Region').textContent = "제주도";
+
+      document.getElementById('Image1').src = "./images/Jejudo images/설문대/설문대 (7).jpg";
+      document.getElementById('Title1').textContent = "설문대 할망제";
+      document.getElementById('Term1').textContent = "2018.05.15 ~ 2018.05.30";
+
+      document.getElementById('Image2').src = "./images/Jejudo images/방선문/방선문 (13).png";
+      document.getElementById('Title2').textContent = "방선문축제";
+      document.getElementById('Term2').textContent = "2018.05.12 ~ 2018.05.13";
+
+      document.getElementById('Image3').src = "./images/Jejudo images/짠/짠 (10).jpg";
+      document.getElementById('Title3').textContent = "짠 페스티벌";
+      document.getElementById('Term3').textContent = "2018.07.20 ~ 2018.07.22";
+
+      document.getElementById('Image4').src = "./images/Jejudo images/태권/태권 (5).jpg";
+      document.getElementById('Title4').textContent = "세계 태권도 한마당";
+      document.getElementById('Term4').textContent = "2018.07.28 ~ 2018,07.31";
+
+      document.getElementById('Image5').src = "./images/Jejudo images/서귀포/서귀포 (7).jpg";
+      document.getElementById('Title5').textContent = "서귀포 칠십리축제";
+      document.getElementById('Term5').textContent = "2018.09.28 ~ 2018.09.30";
+
+      document.getElementById('Image6').src = "./images/Jejudo images/허브/허브 (7).jpg";
+      document.getElementById('Title6').textContent = "허브동산 '별빛놀이'";
+      document.getElementById('Term6').textContent = "2018.01.01 ~ 2018.12.31";
+
+      document.getElementById('Image7').src = "./images/Jejudo images/한림/한림 (5).jpg";
+      document.getElementById('Title7').textContent = "한림공원 수선화축제";
+      document.getElementById('Term7').textContent = "2018.01.19 ~ 2018.02.18";
+
+      document.getElementById('Image8').src = "./images/Jejudo images/겨울바다/겨울바다 (6).png";
+      document.getElementById('Title8').textContent = "서귀포 국제펭귄수영대회";
+      document.getElementById('Term8').textContent = "2018.01.01 ~ 2018.01.01";
+    }
+  }
+  </script>
+</body>
+</html>
